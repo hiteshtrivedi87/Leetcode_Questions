@@ -1,0 +1,27 @@
+class Solution {
+    int countTriplets(int sum, int arr[]) {
+        
+        Arrays.sort(arr);
+        int n = arr.length;
+        int count =0;
+        
+        for(int i =0; i<n; i++){
+            int left = i+1;
+            int right = n-1;
+            
+            while(left<right){
+                int summ= arr[i]+arr[left]+arr[right];
+                
+                if(summ>=sum){
+                    right--;
+                }
+                else{
+                    // agr n-1 index ka sum less hai tyo usse pehle ke index ke sum bhi km honge 
+                    count=count+ (right-left);
+                    left++;
+                }
+            }
+        }
+        return count;
+    }
+}
