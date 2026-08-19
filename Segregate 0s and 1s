@@ -18,7 +18,7 @@ class Solution {
             else if(arr[left]==1&&arr[right]==1){
                 right--;
             }
-            else{
+            else{ // arr[left]==0 && arr[right]==1
                 left++;
                 right--;
             }
