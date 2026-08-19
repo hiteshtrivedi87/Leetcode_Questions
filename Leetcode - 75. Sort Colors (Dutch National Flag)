@@ -1,0 +1,29 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        int n = nums.length;
+        int low = 0;
+         int mid =0;
+         int high = n-1;
+         while(mid<=high){
+            // agr mid me 0 mil gya to phir uska stating mr bhej denge mtlb low se swap kr denge 
+            if(nums[mid]==0){
+                int temp = nums[mid];
+                nums[mid]= nums[low];
+                nums[low]=temp;
+                low++;
+                mid++;
+            }
+            // agr mid me 1 mil gya to hum kuch nhii krenge kyuki hum 1 beech me hi chahte hai 
+            else if(nums[mid]==1){
+                mid++;
+            }
+            // agr  mid me 2 mil gya to uska last me bhej denge mtlb hugh se swap kr denge 
+            else if(nums[mid]==2){
+                int temp = nums[mid];
+                nums[mid]= nums[high];
+                nums[high]=temp;
+                high--;
+            }
+         }
+    }
+}
